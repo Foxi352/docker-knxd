@@ -6,7 +6,7 @@
 FROM alpine
 
 ## Choose between branches
-ARG BRANCH=master
+ARG BRANCH=0.14
 
 COPY entrypoint.sh /
 
@@ -29,4 +29,4 @@ COPY knxd.ini /etc/knxd
 EXPOSE 3672 6720
 VOLUME /etc/knxd
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT "/entrypoint.sh"
