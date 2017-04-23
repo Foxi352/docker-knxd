@@ -7,6 +7,7 @@ if [ $# -eq 0 ]; then
 else
     ARGS=$@
 fi
+
 CONFIG_PATH=/etc/knxd
 
 if [ ! -e "$CONFIG_PATH/knxd.ini" ]; then
@@ -17,3 +18,8 @@ fi
 chown knxd:knxd /etc/knxd/knxd.ini
 
 su -s /bin/sh -c "knxd $ARGS" knxd
+
+# Workaround because knxd always forks to background
+while [ true ] ; do
+    sleep 5
+done
