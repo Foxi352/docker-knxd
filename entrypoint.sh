@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Starting knxd service."
+
 if [ $# -eq 0 ]; then
     ARGS=/etc/knxd/knxd.ini
 else
