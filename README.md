@@ -1,5 +1,5 @@
 # knxd
-For documentation and information on the KNXD project [check our GitHub page](https://github.com/knxd/knxd).
+For documentation and information on the KNXD project [check our their GitHub page](https://github.com/knxd/knxd).
 
 ## Exposed ports
 * 6720/tcp (knx-ip)
