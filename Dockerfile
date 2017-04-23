@@ -29,4 +29,5 @@ COPY knxd.ini /etc/knxd
 EXPOSE 3672 6720
 VOLUME /etc/knxd
 
-ENTRYPOINT "/entrypoint.sh"
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/etc/knxd/knxd.ini"]
