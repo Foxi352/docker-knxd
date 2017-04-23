@@ -6,7 +6,9 @@
 FROM alpine
 
 ## Choose between branches
-ARG BRANCH=master
+ARG BRANCH=v0.14
+
+COPY entrypoint.sh /
 
 RUN apk add --no-cache build-base gcc abuild binutils binutils-doc gcc-doc git libev-dev automake autoconf libtool argp-standalone linux-headers libusb-dev cmake cmake-doc dev86 \
     && mkdir -p /usr/local/src && cd /usr/local/src \
@@ -17,13 +19,14 @@ RUN apk add --no-cache build-base gcc abuild binutils binutils-doc gcc-doc git l
     && make && make install && cd .. && rm -rf knxd && mkdir -p /etc/knxd \
     && addgroup -S knxd \
     && adduser -D -S -s /sbin/nologin -G knxd knxd \
+    && chmod a+x /entrypoint.sh \
     && apk del --no-cache build-base abuild binutils binutils-doc gcc-doc git automake autoconf libtool argp-standalone cmake cmake-doc dev86
 
 
+COPY knxd.ini /root   
 COPY knxd.ini /etc/knxd    
 
-EXPOSE 6720
+EXPOSE 3672 6720
 VOLUME /etc/knxd
 
-ENTRYPOINT ["su -s /bin/sh -c 'knxd /etc/knxd/knxd.ini' knxd"]
-#CMD ["/etc/knxd/knxd.ini"]
+ENTRYPOINT "/entrypoint.sh"

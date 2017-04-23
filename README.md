@@ -2,6 +2,9 @@
 For documentation and information on the KNXD project [check our their GitHub page](https://github.com/knxd/knxd).
 
 ## Exposed ports
+***I still don't know why, but instead of binding ports use --net=host to get it working.***
+
+* 3672/tcp (Server port)
 * 6720/tcp (knx-ip)
 
 ## Exported volumes
@@ -15,4 +18,4 @@ As default the image starts `knxd` as an entrypoint and passes `/etc/knxd/knxd.i
 
 Example to run the image standalone with a provided ini file in `./knxd/etc/knxd.ini`:
 
-	docker run -d -p 3672:3672 -v ./knxd/etc:/etc/knxd foxi352/knxd
+	docker run -d --net=host -v ./knxd/etc:/etc/knxd foxi352/knxd
