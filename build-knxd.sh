@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -z "$1" ]]; then
-    VERSION=0.16
+    VERSION=0.14
 else
     VERSION=$1
 fi
