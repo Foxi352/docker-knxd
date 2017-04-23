@@ -18,4 +18,4 @@ As default the image starts `knxd` as an entrypoint and passes `/etc/knxd/knxd.i
 
 Example to run the image standalone with a provided ini file in `./knxd/etc/knxd.ini`:
 
-	docker run -d -p 3672:3672 -v ./knxd/etc:/etc/knxd foxi352/knxd
+	docker run -d --net=host -v ./knxd/etc:/etc/knxd foxi352/knxd
