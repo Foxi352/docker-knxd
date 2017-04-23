@@ -26,4 +26,3 @@ EXPOSE 6720
 VOLUME /etc/knxd
 
 ENTRYPOINT ["su -s /bin/sh -c 'knxd /etc/knxd/knxd.ini' knxd"]
-#CMD ["/etc/knxd/knxd.ini"]
