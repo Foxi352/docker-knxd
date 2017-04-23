@@ -6,7 +6,7 @@
 FROM alpine
 
 ## Choose between branches
-ARG BRANCH=0.14
+ARG BRANCH=v0.14
 
 COPY entrypoint.sh /
 
