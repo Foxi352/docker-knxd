@@ -14,4 +14,4 @@ fi
 
 chown knxd:knxd /etc/knxd/knxd.ini
 
-su -s /bin/sh -c 'knxd $ARGS' knxd
+su -s /bin/sh -c "knxd $ARGS" knxd
