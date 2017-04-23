@@ -25,4 +25,4 @@ COPY knxd.ini /etc/knxd
 EXPOSE 6720
 VOLUME /etc/knxd
 
-ENTRYPOINT ["su -s /bin/sh -c 'knxd /etc/knxd/knxd.ini' knxd"]
+ENTRYPOINT ["su","-s","/bin/sh","-c","'knxd /etc/knxd/knxd.ini'","knxd"]
