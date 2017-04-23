@@ -2,11 +2,8 @@
 
 echo "Starting knxd service."
 
-if [ $# -eq 0 ]; then
-    ARGS=/etc/knxd/knxd.ini
-else
-    ARGS=$@
-fi
+ARGS=$@
+echo "ARGS: $ARGS"
 
 CONFIG_PATH=/etc/knxd
 
@@ -17,9 +14,11 @@ fi
 
 chown knxd:knxd /etc/knxd/knxd.ini
 
+echo "Press <ctrl>-c to abort"
 su -s /bin/sh -c "knxd $ARGS" knxd
 
 # Workaround because knxd always forks to background
 while [ true ] ; do
     sleep 5
 done
+
