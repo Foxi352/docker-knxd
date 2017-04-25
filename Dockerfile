@@ -26,7 +26,7 @@ RUN apk add --no-cache build-base gcc abuild binutils binutils-doc gcc-doc git l
 COPY knxd.ini /root   
 COPY knxd.ini /etc/knxd    
 
-EXPOSE 3672 6720
+EXPOSE 3671/udp 4720 6720
 VOLUME /etc/knxd
 
 ENTRYPOINT ["/entrypoint.sh"]

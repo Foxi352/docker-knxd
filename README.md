@@ -2,9 +2,9 @@
 For documentation and information on the KNXD project [check our their GitHub page](https://github.com/knxd/knxd).
 
 ## Exposed ports
-***I still don't know why, but instead of binding ports use --net=host to get it working.***
+***This is for reference only. You have to start the container with --net=host or use macvlan driver.***
 
-* 3672/tcp (Server port)
+* 3671/udp (multicast port)
 * 6720/tcp (knx-ip)
 
 ## Exported volumes
